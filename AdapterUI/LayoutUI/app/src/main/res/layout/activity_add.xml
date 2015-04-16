@@ -1,0 +1,227 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="edu.asu.mscs.ashastry.layoutui.AddW"
+    android:id="@+id/add">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Waypoint"
+        android:id="@+id/titleName"
+        android:textSize="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Lattitude : "
+        android:id="@+id/latText"
+        android:layout_above="@+id/newLongitude"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/newLattitude"
+        android:gravity="center_vertical|center_horizontal|right"
+        android:layout_toRightOf="@id/latText"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newLattitude"
+        android:layout_below="@+id/titleName"
+        android:layout_toRightOf="@+id/latText"
+
+
+        android:layout_marginTop="25dp"
+
+
+        android:layout_alignRight="@+id/newAddress"
+        android:layout_alignEnd="@+id/newAddress"
+        android:nextFocusDown="@+id/newLongitude"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:imeOptions="actionNext"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newLongitude"
+        android:imeOptions="actionNext"
+        android:layout_below="@+id/newLattitude"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/newLattitude"
+        android:layout_alignEnd="@+id/newLattitude"
+        android:nextFocusDown="@+id/newElevation"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+
+        android:layout_alignLeft="@+id/newLattitude"
+        android:layout_alignStart="@+id/newLattitude" />
+
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newElevation"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/newLongitude"
+        android:layout_alignEnd="@+id/newLongitude"
+        android:layout_below="@id/newLongitude"
+        android:nextFocusDown="@+id/newName"
+        android:inputType="numberDecimal"
+        android:singleLine="true"
+        android:layout_toRightOf="@+id/latText"
+        android:layout_toEndOf="@+id/latText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newName"
+        android:layout_below="@+id/newElevation"
+        android:layout_marginTop="20dp"
+        android:layout_alignRight="@+id/newElevation"
+        android:layout_alignEnd="@+id/newElevation"
+        android:nextFocusDown="@+id/newAddress"
+        android:singleLine="true"
+        android:layout_toRightOf="@+id/latText"
+        android:layout_toEndOf="@+id/latText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newAddress"
+        android:layout_below="@+id/newName"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:nextFocusForward="@+id/save"
+        android:singleLine="true"
+        android:layout_toRightOf="@+id/latText"
+        android:layout_toEndOf="@+id/latText" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/newCategory"
+        android:layout_below="@+id/newAddress"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:nextFocusForward="@+id/save"
+        android:singleLine="true"
+        android:layout_toRightOf="@+id/latText"
+        android:layout_toEndOf="@+id/latText" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save"
+        android:id="@+id/save"
+        android:onClick="onSave"
+        android:layout_alignTop="@+id/cancel"
+        android:layout_alignRight="@+id/newAddress"
+        android:layout_alignEnd="@+id/newAddress" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:id="@+id/delete"
+        android:onClick="onDelete"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/cancel"
+        android:onClick="onCancel"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:nestedScrollingEnabled="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Longitude : "
+        android:id="@+id/textView"
+        android:layout_alignTop="@+id/newLongitude"
+        android:layout_alignBottom="@+id/newLongitude"
+        android:gravity="center_vertical|center_horizontal|right"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/titleName"
+        android:layout_toStartOf="@+id/titleName" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Elevation : "
+        android:id="@+id/textView4"
+        android:layout_alignTop="@+id/newElevation"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/newElevation"
+        android:gravity="center_vertical|center_horizontal|right"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Name : "
+        android:id="@+id/textView5"
+        android:layout_alignTop="@+id/newName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/newName"
+        android:gravity="center_vertical|right"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_alignEnd="@+id/textView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Address : "
+        android:id="@+id/textView6"
+        android:layout_alignTop="@+id/newAddress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/newAddress"
+        android:gravity="center_vertical|right"
+        android:layout_alignRight="@+id/textView5"
+        android:layout_alignEnd="@+id/textView5" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Category : "
+        android:id="@+id/textView7"
+        android:layout_alignTop="@+id/newCategory"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignBottom="@+id/newCategory"
+        android:gravity="center_vertical|right"
+        android:layout_alignRight="@+id/textView6"
+        android:layout_alignEnd="@+id/textView6" />
+
+
+</RelativeLayout>

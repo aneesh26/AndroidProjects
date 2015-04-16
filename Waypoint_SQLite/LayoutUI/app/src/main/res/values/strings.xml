@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WaypointDB</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Export to JSON File</string>
+    <string name="title_activity_add">Add</string>
+    <string name="title_activity_view">View</string>
+
+
+</resources>
